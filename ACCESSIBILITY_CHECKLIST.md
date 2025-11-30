@@ -87,8 +87,8 @@ La información y los componentes de la interfaz de usuario deben ser presentado
   - No se usan imágenes de texto excepto logos
 
 - [x] **1.4.6 Contraste Mejorado (AAA)**
-  - ✅ Color principal de texto: `#cbd5e1` - Ratio: **9.2:1**
-  - ✅ Enlaces: `#667eea` - Ratio: **7.8:1**
+  - ✅ Color principal de texto: `#cbd5e1` - Ratio: **13.33:1**
+  - ✅ Enlaces: `#8ba3f7` - Ratio: **7.15:1**
   - ✅ Todos los textos cumplen ratio 7:1 o superior
 
 - [x] **1.4.7 Sonido de Fondo Bajo o Nulo (AAA)**

@@ -1,7 +1,9 @@
 ---
-import Header from '../components/Header.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 import Project from "../components/Project.astro";
-import Sidebar from "../components/Sidebar.astro";
+
 const projects = [
   {
     title: "NetCare",
@@ -34,39 +36,100 @@ const projects = [
 ];
 ---
 
-<!DOCTYPE html>
-<html
+<Layout
+  title="DevOps | Facilitador BSV"
+  description="Portfolio de proyectos de DevOps y Cloud, desde infraestructura como código hasta clusters de Kubernetes escalables."
+  lang="es"
 >
-  <Header title="DevOps | Sam Bernstein" />
-  <body>
-    <div class="content">
-        <Sidebar selectedItem="devops" />
-      <nav class="main">
-        <div class="container">
-          <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block"
-              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
-              <div>Back</div></a
-            >
-          </div>
-          <div class="content-container">
-            <h1>DevOps</h1>
-            <section class="items-container">
-                <div class="resouce-items">
-                    {projects.map(project => (
-                      <Project 
-                        title={project.title} 
-                        desc={project.desc}
-                        tech={project.tech}
-                      />
-                    ))}
-                  </div>
-            </section>
-          </div>
-        </div>
-      </nav>
-    </div>
+  <Navbar selectedItem="devops" />
+  <div class="page-wrapper">
+    <main class="main-content" id="main-content">
+      <div class="container">
+        <section class="page-hero">
+          <Breadcrumb
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "DevOps" }
+            ]}
+          />
+          <h1><span lang="en">DevOps</span></h1>
+          <p class="lead">
+            Proyectos de infraestructura cloud, <span lang="en">CI/CD</span>, y orquestación con <span lang="en">Kubernetes</span>.
+          </p>
+        </section>
 
-    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-  </body>
-</html>
+        <section class="projects-section">
+          <h2>Proyectos Destacados</h2>
+          <div class="projects-container">
+            {projects.map(project => (
+              <Project
+                title={project.title}
+                desc={project.desc}
+                tech={project.tech}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    .page-wrapper {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .page-hero {
+      padding: 2rem 0 3rem;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      color: #cbd5e1; /* AAA Compliant */
+      line-height: 1.7;
+      max-width: 75ch;
+    }
+
+    .projects-section {
+      padding: 2rem 0;
+    }
+
+    .projects-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      letter-spacing: 0;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</Layout>

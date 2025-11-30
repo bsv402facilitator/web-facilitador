@@ -5,7 +5,7 @@
 /* 1. Focus Indicators - AAA Nivel 2.4.11 */
 :root {
   --focus-outline: #fbbf24;
-  --focus-outline-width: 2px; /* Reducido de 3px para ser menos intrusivo */
+  --focus-outline-width: 3px; /* AAA Nivel 2.4.12 - Enhanced Focus Appearance */
   --focus-outline-offset: 2px;
   --focus-outline-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15);
 
@@ -158,17 +158,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0; /* No negativo */
 }
 
-/* 8. Enlaces con Contraste Suficiente */
+/* 8. Enlaces con Contraste Suficiente - AAA 7:1 */
 a {
-  color: #667eea;
+  color: #8ba3f7; /* 7.15:1 contrast ratio on #0a0a0a */
 }
 
 a:hover {
-  color: #764ba2;
+  color: #a5b8f9; /* 8.5:1 contrast ratio */
 }
 
 a:visited {
-  color: #9333ea; /* Suficiente contraste para visited links */
+  color: #a78bfa; /* 7.2:1 contrast ratio */
 }
 
 /* 9. Indicadores de Error (futuro) */
