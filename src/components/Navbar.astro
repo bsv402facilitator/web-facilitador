@@ -1,0 +1,473 @@
+---
+const { selectedItem } = Astro.props;
+---
+
+<header class="main-header" role="banner">
+  <div class="header-container">
+    <div class="header-brand">
+      <a href="/" class="brand-link" aria-label="Facilitador X402 - Inicio">
+        <img
+          src="/assets/coin-icon.svg"
+          loading="eager"
+          alt="Facilitador X402"
+          class="brand-image"
+        />
+        <div class="brand-text">
+          <div class="brand-title">Facilitador X402</div>
+          <div class="brand-subtitle">BSV Accessible</div>
+        </div>
+      </a>
+    </div>
+
+    <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+      <ul class="nav-list" role="list">
+        <li>
+          <a
+            href="/"
+            class={`nav-link ${selectedItem === 'home' ? 'nav-link-active' : ''}`}
+            aria-current={selectedItem === 'home' ? 'page' : undefined}
+          >
+            <img
+              src="/assets/home.svg"
+              loading="eager"
+              alt=""
+              class="nav-icon"
+              aria-hidden="true"
+            />
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/arquitectura"
+            class={`nav-link ${selectedItem === 'arquitectura' ? 'nav-link-active' : ''}`}
+            aria-current={selectedItem === 'arquitectura' ? 'page' : undefined}
+          >
+            <img
+              src="/assets/code.svg"
+              loading="eager"
+              alt=""
+              class="nav-icon"
+              aria-hidden="true"
+            />
+            <span>Arquitectura</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/accesibilidad"
+            class={`nav-link ${selectedItem === 'accesibilidad' ? 'nav-link-active' : ''}`}
+            aria-current={selectedItem === 'accesibilidad' ? 'page' : undefined}
+          >
+            <img
+              src="/assets/accessibility.svg"
+              loading="eager"
+              alt=""
+              class="nav-icon"
+              aria-hidden="true"
+            />
+            <span>Accesibilidad</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/wallet-mcp"
+            class={`nav-link ${selectedItem === 'wallet-mcp' ? 'nav-link-active' : ''}`}
+            aria-current={selectedItem === 'wallet-mcp' ? 'page' : undefined}
+          >
+            <img
+              src="/assets/wallet.svg"
+              loading="eager"
+              alt=""
+              class="nav-icon"
+              aria-hidden="true"
+            />
+            <span>Wallet MCP</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/implementacion"
+            class={`nav-link ${selectedItem === 'implementacion' ? 'nav-link-active' : ''}`}
+            aria-current={selectedItem === 'implementacion' ? 'page' : undefined}
+          >
+            <img
+              src="/assets/protocol.svg"
+              loading="eager"
+              alt=""
+              class="nav-icon"
+              aria-hidden="true"
+            />
+            <span>Implementación</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button
+      class="mobile-menu-toggle"
+      aria-label="Abrir menú de navegación"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      type="button"
+    >
+      <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav role="navigation" aria-label="Navegación móvil">
+      <ul class="mobile-nav-list" role="list">
+        <li>
+          <a
+            href="/"
+            class={`mobile-nav-link ${selectedItem === 'home' ? 'mobile-nav-link-active' : ''}`}
+            aria-current={selectedItem === 'home' ? 'page' : undefined}
+          >
+            <img src="/assets/home.svg" alt="" class="mobile-nav-icon" aria-hidden="true" />
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/arquitectura"
+            class={`mobile-nav-link ${selectedItem === 'arquitectura' ? 'mobile-nav-link-active' : ''}`}
+            aria-current={selectedItem === 'arquitectura' ? 'page' : undefined}
+          >
+            <img src="/assets/code.svg" alt="" class="mobile-nav-icon" aria-hidden="true" />
+            <span>Arquitectura</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/accesibilidad"
+            class={`mobile-nav-link ${selectedItem === 'accesibilidad' ? 'mobile-nav-link-active' : ''}`}
+            aria-current={selectedItem === 'accesibilidad' ? 'page' : undefined}
+          >
+            <img src="/assets/accessibility.svg" alt="" class="mobile-nav-icon" aria-hidden="true" />
+            <span>Accesibilidad</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/wallet-mcp"
+            class={`mobile-nav-link ${selectedItem === 'wallet-mcp' ? 'mobile-nav-link-active' : ''}`}
+            aria-current={selectedItem === 'wallet-mcp' ? 'page' : undefined}
+          >
+            <img src="/assets/wallet.svg" alt="" class="mobile-nav-icon" aria-hidden="true" />
+            <span>Wallet MCP</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/implementacion"
+            class={`mobile-nav-link ${selectedItem === 'implementacion' ? 'mobile-nav-link-active' : ''}`}
+            aria-current={selectedItem === 'implementacion' ? 'page' : undefined}
+          >
+            <img src="/assets/protocol.svg" alt="" class="mobile-nav-icon" aria-hidden="true" />
+            <span>Implementación</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  @import '../styles/colors.css';
+
+  /* Header Principal */
+  .main-header {
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  /* Brand */
+  .header-brand {
+    flex-shrink: 0;
+  }
+
+  .brand-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+
+  .brand-link:hover {
+    background: var(--bg-secondary);
+  }
+
+  .brand-link:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .brand-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .brand-title {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .brand-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.2;
+  }
+
+  /* Navegación Desktop */
+  .main-nav {
+    flex: 1;
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    min-height: 44px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+  }
+
+  .nav-link:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+
+  .nav-link:hover .nav-icon {
+    opacity: 1;
+  }
+
+  .nav-link:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .nav-link-active {
+    background: var(--accent-primary);
+    color: var(--text-primary);
+  }
+
+  .nav-link-active .nav-icon {
+    opacity: 1;
+  }
+
+  /* Mobile Menu Toggle */
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 2px solid var(--border-medium);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-menu-toggle:hover {
+    background: var(--bg-secondary);
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+  }
+
+  .mobile-menu-toggle:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    padding: 1rem;
+  }
+
+  .mobile-menu[hidden] {
+    display: none;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    min-height: 44px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-nav-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+  }
+
+  .mobile-nav-link:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
+  .mobile-nav-link:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .mobile-nav-link-active {
+    background: var(--accent-primary);
+    color: var(--text-primary);
+  }
+
+  .mobile-nav-link-active .mobile-nav-icon {
+    opacity: 1;
+  }
+
+  /* Responsive */
+  @media (min-width: 769px) {
+    .main-nav {
+      display: block;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+    }
+
+    .mobile-menu {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-container {
+      padding: 1rem;
+    }
+
+    .brand-title {
+      font-size: 1rem;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+    }
+
+    .brand-image {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link,
+    .mobile-nav-link,
+    .brand-link,
+    .mobile-menu-toggle {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  function setupMobileMenu() {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.mobile-menu');
+
+    if (!toggle || !menu) return;
+
+    const handleToggle = () => {
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isExpanded));
+
+      if (isExpanded) {
+        menu.setAttribute('hidden', '');
+      } else {
+        menu.removeAttribute('hidden');
+      }
+    };
+
+    toggle.addEventListener('click', handleToggle);
+
+    return () => {
+      toggle.removeEventListener('click', handleToggle);
+    };
+  }
+
+  let cleanup;
+  document.addEventListener('astro:page-load', () => {
+    if (cleanup) cleanup();
+    cleanup = setupMobileMenu();
+  });
+
+  document.addEventListener('astro:before-swap', () => {
+    if (cleanup) cleanup();
+  });
+</script>

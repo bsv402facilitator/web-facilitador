@@ -1,0 +1,141 @@
+---
+const { selectedItem } = Astro.props;
+---
+
+<aside
+  data-animation="default"
+  data-collapse="medium"
+  data-duration="400"
+  data-easing="ease"
+  data-easing2="ease"
+  role="complementary"
+  aria-label="Site navigation and profile"
+  class="sidebar w-nav"
+>
+  <div class="nav-content">
+    <a href="/" class="w-nav-brand" aria-label="home">
+      <div class="niv-data">
+        <img
+          src="/assets/sam.jpg"
+          loading="eager"
+          alt="Facilitador X402 Logo"
+          class="niv-image"
+        />
+        <div>
+          <div class="label-white">Facilitador X402</div>
+          <div class="label-gray">BSV Accessible</div>
+        </div>
+      </div>
+    </a>
+
+    <nav role="navigation" class="w-nav-menu">
+      <a
+        href="/"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'home' ? 'w--current' : ''
+        }`}
+        aria-current={selectedItem === 'home' ? 'page' : undefined}
+      >
+        <img
+          src="/assets/home.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Inicio</div>
+      </a>
+      <a
+        href="/arquitectura"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'arquitectura' ? 'w--current' : ''
+        }`}
+        aria-current={
+          selectedItem === 'arquitectura' ? 'page' : undefined
+        }
+      >
+        <img
+          src="/assets/code.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Arquitectura</div>
+      </a>
+      <a
+        href="/accesibilidad"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'accesibilidad' ? 'w--current' : ''
+        }`}
+        aria-current={selectedItem === 'accesibilidad' ? 'page' : undefined}
+      >
+        <img
+          src="/assets/favorite.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Accesibilidad</div>
+      </a>
+      <a
+        href="/wallet-mcp"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'wallet-mcp' ? 'w--current' : ''
+        }`}
+        aria-current={selectedItem === 'wallet-mcp' ? 'page' : undefined}
+      >
+        <img
+          src="/assets/dns.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Wallet MCP</div>
+      </a>
+      <a
+        href="/implementacion"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'implementacion' ? 'w--current' : ''
+        }`}
+        aria-current={selectedItem === 'implementacion' ? 'page' : undefined}
+      >
+        <img
+          src="/assets/browser.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Implementación</div>
+      </a>
+    </nav>
+
+    <div
+      class="navbar-icon-button w-nav-button"
+      style="-webkit-user-select: text;"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      role="button"
+      tabindex="0"
+    >
+      <img
+        src="/assets/menu.svg"
+        loading="eager"
+        alt=""
+        class="navbar-icon"
+      />
+    </div>
+  </div>
+
+  <script>
+    import { setupNav } from '../scripts/nav.js';
+    
+    let cleanup;
+    document.addEventListener('astro:page-load', () => {
+      if (cleanup) cleanup();
+      cleanup = setupNav();
+    });
+
+    document.addEventListener('astro:before-swap', () => {
+      if (cleanup) cleanup();
+    });
+  </script>
+</aside>

@@ -1,0 +1,78 @@
+---
+interface Props {
+  items: Array<{ label: string; href?: string }>;
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-list">
+    {items.map((item, index) => (
+      <li class="breadcrumb-item">
+        {item.href ? (
+          <a href={item.href} class="breadcrumb-link">
+            {item.label}
+          </a>
+        ) : (
+          <span aria-current="page" class="breadcrumb-current">
+            {item.label}
+          </span>
+        )}
+        {index < items.length - 1 && (
+          <span class="breadcrumb-separator" aria-hidden="true"> / </span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumb-nav {
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb-link {
+    color: #667eea;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .breadcrumb-link:hover {
+    color: #764ba2;
+    text-decoration-thickness: 2px;
+  }
+
+  .breadcrumb-link:focus,
+  .breadcrumb-link:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .breadcrumb-current {
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  .breadcrumb-separator {
+    color: #64748b;
+  }
+</style>

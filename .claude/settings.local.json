@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(timeout:*)",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_navigate_back",
+      "mcp__playwright__browser_close",
+      "Skill(astro-expert)",
+      "Bash(npx astro add:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(echo:*)",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_snapshot",
+      "Bash(cat:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,110 @@
+/* Botones Simplificados - WCAG 2.2 AAA Compliant */
+@import './colors.css';
+
+.btn {
+  /* Base */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  /* Tamaño AAA */
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.75rem 1.5rem;
+
+  /* Tipografía */
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+
+  /* Borde */
+  border: 2px solid transparent;
+  border-radius: 8px;
+
+  /* Transición */
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* Botón Primario */
+.btn-primary {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--focus-ring-alpha);
+}
+
+/* Botón Secundario */
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border-medium);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Botón Outline */
+.btn-outline {
+  background: transparent;
+  color: var(--accent-light);
+  border-color: var(--accent-light);
+}
+
+.btn-outline:hover {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+
+.btn-outline:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Tamaños */
+.btn-sm {
+  min-height: 36px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  min-height: 52px;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Estados */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Responsive - Reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}

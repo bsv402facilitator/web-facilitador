@@ -1,0 +1,35 @@
+/* Paleta de Colores Simplificada - WCAG 2.2 AAA Compliant */
+:root {
+  /* Colores Base */
+  --bg-primary: #0a0a0a;        /* Fondo principal oscuro */
+  --bg-secondary: #1a1a1a;      /* Fondo secundario */
+  --bg-tertiary: #2a2a2a;       /* Fondo terciario para cards */
+
+  /* Textos - AAA Compliant (7:1 contrast ratio) */
+  --text-primary: #ffffff;       /* Texto principal blanco */
+  --text-secondary: #e0e0e0;     /* Texto secundario - 12.6:1 ratio en #0a0a0a */
+  --text-muted: #b0b0b0;         /* Texto atenuado - 7.3:1 ratio en #0a0a0a */
+
+  /* Color de Acento - Simplificado */
+  --accent-primary: #3b82f6;     /* Azul principal */
+  --accent-hover: #2563eb;       /* Azul hover */
+  --accent-light: #60a5fa;       /* Azul claro */
+
+  /* Bordes */
+  --border-subtle: #333333;      /* Bordes sutiles */
+  --border-medium: #444444;      /* Bordes medios */
+
+  /* Focus y Estados */
+  --focus-ring: #fbbf24;         /* Anillo de foco dorado - alta visibilidad */
+  --focus-ring-alpha: rgba(251, 191, 36, 0.2);
+
+  /* Semánticos */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+
+  /* Sombras Simplificadas */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+}

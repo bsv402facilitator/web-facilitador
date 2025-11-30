@@ -1,0 +1,337 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<Layout
+  title="Guía de Implementación"
+  description="Integra pagos accesibles X402 con BSV en tu aplicación en minutos. Nuestra URL está lista para producción."
+  lang="es"
+>
+  <Navbar selectedItem="implementacion" />
+  <div class="page-wrapper">
+    <main class="main-content" id="main-content">
+      <div class="container">
+        <section class="page-hero">
+          <Breadcrumb
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "Implementación" }
+            ]}
+          />
+          <h1>Guía de Implementación</h1>
+          <p class="lead">
+            Integra pagos accesibles <span lang="en">X402</span> con <span lang="en">BSV</span> en tu aplicación en minutos.
+            Nuestra <span lang="en">URL</span> está lista para producción.
+          </p>
+        </section>
+
+        <section class="quick-start">
+          <h2><span role="img" aria-label="Rocket representing quick start">🚀</span> <span lang="en">Quick Start</span></h2>
+
+          <div class="step-card">
+            <h3>1. Obtén una <span lang="en">API Key</span></h3>
+            <p>Regístrate para obtener acceso al facilitador</p>
+            <div class="code-box">
+              <pre><code>curl -X POST https://facilitador.bsv.com/api/register
+  -H "Content-Type: application/json"
+  -d '{"email": "tu@email.com"}'</code></pre>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <h3>2. Tu Primera Solicitud</h3>
+            <p>Realiza un pago de prueba</p>
+            <div class="code-box">
+              <pre><code>curl -X POST https://facilitador.bsv.com/api/payment
+  -H "Authorization: Bearer TU_API_KEY"
+  -H "Content-Type: application/json"
+  -d '{
+    "amount": "0.001",
+    "currency": "BSV",
+    "to_address": "1A1zP1...",
+    "accessibility_profile": {
+      "needs": ["vision", "simple"]
+    }
+  }'</code></pre>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <h3>3. Procesa la Respuesta</h3>
+            <p>Todas las respuestas incluyen metadatos de accesibilidad</p>
+            <div class="code-box">
+              <pre><code>{
+  "status": "success",
+  "txid": "a1b2c3d4...",
+  "accessibility": {
+    "summary": "Pago enviado correctamente",
+    "tags": ["vision", "simple"],
+    "simple_explanation": "El dinero llegó bien"
+  }
+}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="features-section">
+          <h2>Características Principales</h2>
+
+          <div class="feature-grid">
+            <div class="feature-box">
+              <h3><span role="img" aria-label="Check mark representing easy integration">✅</span> Fácil Integración</h3>
+              <p><span lang="en">API REST</span> simple y bien documentada</p>
+            </div>
+
+            <div class="feature-box">
+              <h3><span role="img" aria-label="Lock representing security">🔐</span> Seguro</h3>
+              <p>Autenticación mediante <span lang="en">API keys</span> y <span lang="en">HTTPS</span></p>
+            </div>
+
+            <div class="feature-box">
+              <h3><span role="img" aria-label="Accessibility symbol">♿</span> Accesible</h3>
+              <p>Metadatos de accesibilidad en cada respuesta</p>
+            </div>
+
+            <div class="feature-box">
+              <h3><span role="img" aria-label="Lightning bolt representing speed">⚡</span> Rápido</h3>
+              <p>Pagos confirmados en segundos con <span lang="en">BSV</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <h2>¿Necesitas Ayuda?</h2>
+          <p>Consulta nuestra arquitectura técnica para entender cómo funciona el sistema.</p>
+          <a href="/arquitectura" class="button button-primary">Ver Arquitectura</a>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    .page-wrapper {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .page-hero {
+      padding: 2rem 0 3rem;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      color: #cbd5e1; /* AAA Compliant */
+      line-height: 1.7;
+      max-width: 75ch;
+    }
+
+    .quick-start {
+      padding: 3rem 0;
+    }
+
+    .quick-start h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      letter-spacing: 0;
+    }
+
+    .step-card {
+      padding: 2rem;
+      background: #1c1c1c;
+      border: 2px solid #353535;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .step-card:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .step-card:focus-within {
+      outline: 2px solid #fbbf24;
+      outline-offset: 2px;
+    }
+
+    .step-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      letter-spacing: 0;
+    }
+
+    .step-card p {
+      color: #cbd5e1; /* AAA Compliant */
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      max-width: 75ch;
+    }
+
+    .code-box {
+      background: #0f172a;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid #334155;
+    }
+
+    .code-box pre {
+      margin: 0;
+    }
+
+    .code-box code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      color: #cbd5e1; /* AAA Compliant */
+      line-height: 1.6;
+    }
+
+    .features-section {
+      padding: 4rem 0;
+    }
+
+    .features-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      letter-spacing: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-box {
+      padding: 1.5rem;
+      background: #1c1c1c;
+      border: 2px solid #353535;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .feature-box:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .feature-box:focus-within {
+      outline: 2px solid #fbbf24;
+      outline-offset: 2px;
+    }
+
+    .feature-box h3 {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      letter-spacing: 0;
+    }
+
+    .feature-box p {
+      color: #cbd5e1; /* AAA Compliant */
+      font-size: 0.875rem;
+      line-height: 1.7;
+      max-width: 75ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 16px;
+      margin: 2rem 0;
+    }
+
+    .cta-section h2 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0;
+    }
+
+    .cta-section p {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      min-height: 44px; /* AAA Compliant */
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .button-primary {
+      background: white;
+      color: #667eea;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .button-primary:focus,
+    .button-primary:focus-visible {
+      outline: 2px solid #fbbf24;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .step-card:hover,
+      .feature-box:hover,
+      .button-primary:hover {
+        transform: none;
+      }
+    }
+  </style>
+</Layout>

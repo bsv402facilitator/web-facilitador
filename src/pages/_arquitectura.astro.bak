@@ -1,0 +1,1055 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title="Arquitectura Técnica - Facilitador X402 Accesible para BSV" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="arquitectura" />
+      <nav class="main">
+        <div class="container">
+
+          <!-- Hero Section -->
+          <section class="page-hero">
+            <div class="breadcrumb">
+              <a href="/">Inicio</a> / <span>Arquitectura Técnica</span>
+            </div>
+            <h1>Arquitectura Técnica del Facilitador</h1>
+            <p class="lead">
+              Diseño de sistema escalable, seguro y accesible que conecta protocolos modernos con blockchain.
+            </p>
+          </section>
+
+          <!-- Architecture Overview Diagram -->
+          <section class="diagram-section">
+            <h2>Arquitectura General del Sistema</h2>
+            <div class="diagram-container">
+              <div class="arch-flow">
+                <div class="arch-box client-box">
+                  <h4>Cliente / Agente LLM</h4>
+                  <p>Claude, Cursor, Copilot</p>
+                </div>
+                <div class="arch-arrow">↓<br/><span>Solicitud X402</span></div>
+                <div class="arch-box facilitador-box">
+                  <h4>Facilitador X402 Accesible</h4>
+                  <ul>
+                    <li>Validación de transacciones</li>
+                    <li>Generación de metadatos</li>
+                    <li>Firma de transacciones</li>
+                    <li>Gestión de accesibilidad</li>
+                  </ul>
+                </div>
+                <div class="arch-arrow">↓<br/><span>TX BSV</span></div>
+                <div class="arch-box blockchain-box">
+                  <h4>Blockchain BSV</h4>
+                  <p>Escalable • Económica • Rápida</p>
+                </div>
+                <div class="arch-arrow return-arrow">↓<br/><span>Respuesta Accesible</span></div>
+                <div class="arch-box metadata-box">
+                  <h4>Metadatos Accesibles</h4>
+                  <ul>
+                    <li>accessibility_summary</li>
+                    <li>accessibility_tags</li>
+                    <li>simple_language</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <p class="diagram-description">
+              <strong>Flujo de datos:</strong>{" El cliente envía una solicitud X402, el facilitador la procesa generando metadatos de accesibilidad, ejecuta la transacción en BSV, y devuelve la respuesta con toda la información accesible al cliente LLM."}
+            </p>
+          </section>
+
+          <!-- Componentes Principales -->
+          <section class="components-section">
+            <h2>Componentes Principales del Sistema</h2>
+
+            <div class="components-grid">
+              <div class="component-card">
+                <div class="component-number">1</div>
+                <h3>Motor de Protocolo X402</h3>
+                <p>Implementa el estándar X402 completo para pagos HTTP. Valida solicitudes, procesa headers, gestiona estados de pago y mantiene compatibilidad total con la especificación.</p>
+                <div class="tech-list">
+                  <span class="tech-item">Parser de Requests X402</span>
+                  <span class="tech-item">Validación de Headers</span>
+                  <span class="tech-item">State Machine de Pagos</span>
+                  <span class="tech-item">Response Builder</span>
+                </div>
+              </div>
+
+              <div class="component-card">
+                <div class="component-number">2</div>
+                <h3>Procesador de Transacciones BSV</h3>
+                <p>Maneja la construcción, firma y emisión de transacciones en Bitcoin SV. Gestiona UTXOs, cálculo de fees, y confirmaciones de red.</p>
+                <div class="tech-list">
+                  <span class="tech-item">UTXO Management</span>
+                  <span class="tech-item">Transaction Builder</span>
+                  <span class="tech-item">Signature Engine</span>
+                  <span class="tech-item">Broadcast Handler</span>
+                </div>
+              </div>
+
+              <div class="component-card highlight-component">
+                <div class="component-number">3</div>
+                <h3>Motor de Accesibilidad</h3>
+                <p>{"Innovación principal: genera metadatos de accesibilidad para cada operación. Adapta mensajes, crea descripciones simples, y proporciona múltiples niveles de detalle."}</p>
+                <div class="tech-list">
+                  <span class="tech-item">Generador de Resúmenes</span>
+                  <span class="tech-item">Simplificación de Lenguaje</span>
+                  <span class="tech-item">Tags de Accesibilidad</span>
+                  <span class="tech-item">Instrucciones Paso a Paso</span>
+                </div>
+              </div>
+
+              <div class="component-card">
+                <div class="component-number">4</div>
+                <h3>Wallet MCP Server</h3>
+                <p>Servidor MCP que permite control completo de wallets BSV desde clientes LLM. Autocustodia, generación de claves, y gestión segura.</p>
+                <div class="tech-list">
+                  <span class="tech-item">Key Generation (BIP32/44)</span>
+                  <span class="tech-item">Secure Storage</span>
+                  <span class="tech-item">MCP Protocol Handler</span>
+                  <span class="tech-item">LLM Command Interface</span>
+                </div>
+              </div>
+
+              <div class="component-card">
+                <div class="component-number">5</div>
+                <h3>API REST & Gateway</h3>
+                <p>Interfaz HTTP/HTTPS que expone endpoints para servidores externos. Autenticación, rate limiting, y documentación OpenAPI.</p>
+                <div class="tech-list">
+                  <span class="tech-item">RESTful Endpoints</span>
+                  <span class="tech-item">Auth & Security</span>
+                  <span class="tech-item">Rate Limiting</span>
+                  <span class="tech-item">OpenAPI Docs</span>
+                </div>
+              </div>
+
+              <div class="component-card">
+                <div class="component-number">6</div>
+                <h3>Sistema de Seguridad</h3>
+                <p>{"Múltiples capas de seguridad: validación de entradas, encriptación end-to-end, verificación de firmas, y auditoría de transacciones."}</p>
+                <div class="tech-list">
+                  <span class="tech-item">Input Validation</span>
+                  <span class="tech-item">E2E Encryption</span>
+                  <span class="tech-item">Signature Verification</span>
+                  <span class="tech-item">Audit Logging</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Flujo de Transacción Detallado -->
+          <section class="flow-section">
+            <h2>Flujo Detallado de una Transacción</h2>
+
+            <div class="flow-steps">
+              <div class="flow-step">
+                <div class="step-icon">📥</div>
+                <div class="step-details">
+                  <h4>1. Recepción de Solicitud X402</h4>
+                  <div class="code-block">
+                    <code>POST /payment HTTP/1.1
+Host: facilitador.bsv.com
+X-Payment-Amount: 0.001
+X-Payment-Currency: BSV
+X-Payment-Destination: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
+Content-Type: application/json
+
+{
+  "user_accessibility_profile": {
+    "needs": ["vision", "cognitive"],
+    "language_level": "simple"
+  }
+}</code>
+                  </div>
+                  <p><strong>Acciones:</strong> {" Parser valida sintaxis, extrae headers X-Payment-*, verifica formato de dirección BSV."}</p>
+                </div>
+              </div>
+
+              <div class="flow-step">
+                <div class="step-icon">✅</div>
+                <div class="step-details">
+                  <h4>2. Validación y Autenticación</h4>
+                  <ul class="check-list">
+                    <li>Verificar firma de la solicitud</li>
+                    <li>Validar cantidad y destino</li>
+                    <li>Comprobar balance de wallet origen</li>
+                    <li>Verificar límites de rate limiting</li>
+                    <li>Analizar perfil de accesibilidad del usuario</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="flow-step">
+                <div class="step-icon">🧠</div>
+                <div class="step-details">
+                  <h4>3. Generación de Metadatos de Accesibilidad</h4>
+                  <div class="code-block">
+                    <code>{
+  "accessibility_summary": "Vas a enviar 0.001 BSV a la dirección que termina en ...DivfNa",
+  "accessibility_tags": ["vision", "cognitive", "simple"],
+  "simple_language_level": "A1",
+  "step_by_step_instructions": [
+    "Paso 1: Verificamos que tienes suficiente saldo",
+    "Paso 2: Preparamos el pago de 0.001 BSV",
+    "Paso 3: Enviamos la transacción a la red BSV",
+    "Paso 4: Esperamos la confirmación"
+  ],
+  "reasoning_safe": true
+}</code>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flow-step">
+                <div class="step-icon">🔨</div>
+                <div class="step-details">
+                  <h4>4. Construcción de Transacción BSV</h4>
+                  <ul class="check-list">
+                    <li>Seleccionar UTXOs óptimos (coin selection)</li>
+                    <li>Calcular fee apropiado basado en tamaño TX</li>
+                    <li>Construir outputs (destino + change)</li>
+                    <li>Firmar inputs con claves privadas</li>
+                    <li>Serializar transacción en formato BSV</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="flow-step">
+                <div class="step-icon">📡</div>
+                <div class="step-details">
+                  <h4>5. Emisión a la Red BSV</h4>
+                  <p>La transacción firmada se envía a múltiples nodos BSV para asegurar propagación rápida. Se monitorea el estado hasta confirmación.</p>
+                  <div class="status-indicators">
+                    <span class="status-item pending">⏳ Pending</span>
+                    <span class="status-item propagated">📶 Propagated</span>
+                    <span class="status-item confirmed">✓ Confirmed</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flow-step">
+                <div class="step-icon">📤</div>
+                <div class="step-details">
+                  <h4>6. Respuesta al Cliente con Metadatos</h4>
+                  <div class="code-block">
+                    <code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "status": "success",
+  "txid": "a1b2c3d4e5f6...",
+  "amount": "0.001",
+  "currency": "BSV",
+  "fee": "0.00000050",
+  "confirmations": 1,
+  "accessibility": {
+    "summary": "Pago enviado correctamente. Tu transacción está confirmada.",
+    "tags": ["vision", "cognitive", "simple"],
+    "simple_explanation": "El dinero ya llegó a su destino. Todo salió bien.",
+    "detailed_steps_completed": [
+      "✓ Saldo verificado",
+      "✓ Transacción creada",
+      "✓ Enviado a la red",
+      "✓ Confirmación recibida"
+    ]
+  }
+}</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Extensión de Accesibilidad X402 -->
+          <section class="accessibility-extension">
+            <h2>Propuesta de Extensión X402 para Accesibilidad</h2>
+            <p class="section-intro">
+              Hemos extendido el protocolo X402 de forma <strong>totalmente compatible</strong> con el estándar original,
+              añadiendo campos opcionales que permiten accesibilidad universal.
+            </p>
+
+            <div class="extension-grid">
+              <div class="extension-card">
+                <h4>Campos Añadidos al Request</h4>
+                <table class="field-table">
+                  <thead>
+                    <tr>
+                      <th>Campo</th>
+                      <th>Tipo</th>
+                      <th>Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>user_accessibility_profile</code></td>
+                      <td>object</td>
+                      <td>Perfil de necesidades del usuario</td>
+                    </tr>
+                    <tr>
+                      <td><code>preferred_language_level</code></td>
+                      <td>string</td>
+                      <td>{"Nivel de lenguaje: simple, medium, technical"}</td>
+                    </tr>
+                    <tr>
+                      <td><code>accessibility_needs</code></td>
+                      <td>array</td>
+                      <td>["vision", "cognitive", "motor", "hearing"]</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="extension-card">
+                <h4>Campos Añadidos al Response</h4>
+                <table class="field-table">
+                  <thead>
+                    <tr>
+                      <th>Campo</th>
+                      <th>Tipo</th>
+                      <th>Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>accessibility_summary</code></td>
+                      <td>string</td>
+                      <td>Resumen en lenguaje claro de la operación</td>
+                    </tr>
+                    <tr>
+                      <td><code>accessibility_tags</code></td>
+                      <td>array</td>
+                      <td>Tags indicando tipos de accesibilidad aplicados</td>
+                    </tr>
+                    <tr>
+                      <td><code>simple_language_level</code></td>
+                      <td>string</td>
+                      <td>Nivel CEFR usado (A1, A2, B1, etc.)</td>
+                    </tr>
+                    <tr>
+                      <td><code>step_by_step_instructions</code></td>
+                      <td>array</td>
+                      <td>Instrucciones descompuestas paso a paso</td>
+                    </tr>
+                    <tr>
+                      <td><code>reasoning_safe</code></td>
+                      <td>boolean</td>
+                      <td>Indica si es seguro mostrar razonamiento detallado</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="compatibility-note">
+              <strong>✓ Compatibilidad Total:</strong>{" Los servidores X402 estándar ignoran estos campos opcionales sin errores. Los clientes que no los necesitan pueden omitirlos completamente."}
+            </div>
+          </section>
+
+          <!-- Stack Tecnológico Detallado -->
+          <section class="tech-stack-detailed">
+            <h2>Stack Tecnológico Detallado</h2>
+
+            <div class="stack-layers">
+              <div class="stack-layer">
+                <h4>Capa de Presentación</h4>
+                <div class="stack-items">
+                  <span class="stack-item">HTTP/2 & HTTPS</span>
+                  <span class="stack-item">JSON-RPC 2.0</span>
+                  <span class="stack-item">OpenAPI 3.0</span>
+                  <span class="stack-item">WebSockets (real-time)</span>
+                </div>
+              </div>
+
+              <div class="stack-layer">
+                <h4>Capa de Protocolo</h4>
+                <div class="stack-items">
+                  <span class="stack-item">X402 Protocol</span>
+                  <span class="stack-item">MCP (Model Context Protocol)</span>
+                  <span class="stack-item">REST API</span>
+                </div>
+              </div>
+
+              <div class="stack-layer highlight-layer">
+                <h4>Capa de Accesibilidad (Innovación)</h4>
+                <div class="stack-items">
+                  <span class="stack-item">WCAG 2.1 AAA</span>
+                  <span class="stack-item">ARIA Standards</span>
+                  <span class="stack-item">Simple Language Generator</span>
+                  <span class="stack-item">Multi-level Descriptions</span>
+                </div>
+              </div>
+
+              <div class="stack-layer">
+                <h4>Capa de Lógica de Negocio</h4>
+                <div class="stack-items">
+                  <span class="stack-item">Transaction Validator</span>
+                  <span class="stack-item">Accessibility Engine</span>
+                  <span class="stack-item">Fee Calculator</span>
+                  <span class="stack-item">UTXO Selector</span>
+                </div>
+              </div>
+
+              <div class="stack-layer">
+                <h4>Capa de Blockchain</h4>
+                <div class="stack-items">
+                  <span class="stack-item">BSV Node Interface</span>
+                  <span class="stack-item">BIP32/BIP44 HD Wallets</span>
+                  <span class="stack-item">ECDSA Signing (secp256k1)</span>
+                  <span class="stack-item">Transaction Serialization</span>
+                </div>
+              </div>
+
+              <div class="stack-layer">
+                <h4>Capa de Datos</h4>
+                <div class="stack-items">
+                  <span class="stack-item">Encrypted Key Storage</span>
+                  <span class="stack-item">UTXO Database</span>
+                  <span class="stack-item">Transaction History</span>
+                  <span class="stack-item">Audit Logs</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Seguridad -->
+          <section class="security-section">
+            <h2>Modelo de Seguridad</h2>
+
+            <div class="security-grid">
+              <div class="security-card">
+                <div class="security-icon">🔐</div>
+                <h4>Autocustodia Total</h4>
+                <p>Las claves privadas nunca abandonan el dispositivo del usuario. El facilitador solo firma con autorización explícita.</p>
+              </div>
+
+              <div class="security-card">
+                <div class="security-icon">🔏</div>
+                <h4>Encriptación End-to-End</h4>
+                <p>Todas las comunicaciones usan TLS 1.3. Las claves en reposo se encriptan con AES-256-GCM.</p>
+              </div>
+
+              <div class="security-card">
+                <div class="security-icon">✍️</div>
+                <h4>Verificación de Firmas</h4>
+                <p>Cada transacción se verifica criptográficamente antes de emisión. Soporte para multi-sig.</p>
+              </div>
+
+              <div class="security-card">
+                <div class="security-icon">📊</div>
+                <h4>Auditoría Completa</h4>
+                <p>Logs inmutables de todas las operaciones para compliance y debugging.</p>
+              </div>
+
+              <div class="security-card">
+                <div class="security-icon">🛡️</div>
+                <h4>Rate Limiting & DDoS Protection</h4>
+                <p>Protección contra abuso mediante rate limiting adaptativo y detección de patrones.</p>
+              </div>
+
+              <div class="security-card">
+                <div class="security-icon">🔍</div>
+                <h4>Input Validation</h4>
+                <p>Validación estricta de todos los inputs para prevenir inyecciones y ataques.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- CTA -->
+          <section class="arch-cta">
+            <h3>¿Listo para Implementar?</h3>
+            <p>Descubre cómo integrar el facilitador en tu aplicación.</p>
+            <a href="/implementacion" class="button button-primary">Ver Guía de Implementación →</a>
+          </section>
+
+        </div>
+      </nav>
+    </div>
+
+    <style>
+      .page-hero {
+        padding: 2rem 0 3rem;
+      }
+
+      .breadcrumb {
+        font-size: 0.875rem;
+        color: #64748b;
+        margin-bottom: 1rem;
+      }
+
+      .breadcrumb a {
+        color: #667eea;
+        text-decoration: none;
+      }
+
+      .page-hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+
+      .lead {
+        font-size: 1.25rem;
+        color: #64748b;
+        line-height: 1.7;
+      }
+
+      /* Diagram Section */
+      .diagram-section {
+        padding: 3rem 0;
+        background: #f8fafc;
+        margin: 2rem -2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .diagram-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .diagram-container {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      .arch-flow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .arch-box {
+        padding: 2rem;
+        border-radius: 12px;
+        border: 3px solid;
+        text-align: center;
+        min-width: 300px;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      .arch-box h4 {
+        margin: 0 0 1rem 0;
+        font-size: 1.25rem;
+      }
+
+      .arch-box p {
+        margin: 0;
+        color: #64748b;
+      }
+
+      .arch-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+      }
+
+      .arch-box li {
+        padding: 0.5rem 0;
+        color: #64748b;
+      }
+
+      .client-box {
+        background: #fef3c7;
+        border-color: #f59e0b;
+      }
+
+      .facilitador-box {
+        background: #c6e7ff;
+        border-color: #0075b8;
+      }
+
+      .blockchain-box {
+        background: #dcfce7;
+        border-color: #16a34a;
+      }
+
+      .metadata-box {
+        background: #f7e9a0;
+        border-color: #b89d00;
+      }
+
+      .arch-arrow {
+        font-size: 2rem;
+        color: #667eea;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .arch-arrow span {
+        font-size: 0.875rem;
+        display: block;
+        color: #667eea;
+        font-weight: 600;
+      }
+
+      .return-arrow {
+        color: #764ba2;
+      }
+
+      .return-arrow span {
+        color: #764ba2;
+      }
+
+      .diagram-description {
+        text-align: center;
+        color: #64748b;
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Components Section */
+      .components-section {
+        padding: 4rem 0;
+      }
+
+      .components-section h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .components-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .component-card {
+        padding: 2rem;
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .component-card:hover {
+        border-color: #667eea;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+      }
+
+      .highlight-component {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+      }
+
+      .highlight-component h3,
+      .highlight-component p {
+        color: white;
+      }
+
+      .component-number {
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
+
+      .highlight-component .component-number {
+        background: white;
+        color: #667eea;
+      }
+
+      .component-card h3 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .component-card p {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tech-item {
+        padding: 0.5rem 1rem;
+        background: #f1f5f9;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #334155;
+      }
+
+      .highlight-component .tech-item {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+
+      /* Flow Section */
+      .flow-section {
+        padding: 4rem 0;
+        background: #f8fafc;
+        margin: 2rem -2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .flow-section h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .flow-steps {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .flow-step {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        border-left: 4px solid #667eea;
+      }
+
+      .step-icon {
+        font-size: 3rem;
+        flex-shrink: 0;
+      }
+
+      .step-details h4 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .code-block {
+        background: #1e293b;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        overflow-x: auto;
+      }
+
+      .code-block code {
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        color: #94a3b8;
+        line-height: 1.6;
+        white-space: pre;
+      }
+
+      .check-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .check-list li {
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .check-list li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #16a34a;
+        font-weight: 700;
+      }
+
+      .status-indicators {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .status-item {
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      .status-item.pending {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      .status-item.propagated {
+        background: #dbeafe;
+        color: #1e40af;
+      }
+
+      .status-item.confirmed {
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      /* Accessibility Extension */
+      .accessibility-extension {
+        padding: 4rem 0;
+      }
+
+      .accessibility-extension h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .section-intro {
+        text-align: center;
+        font-size: 1.125rem;
+        color: #64748b;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+      }
+
+      .extension-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+      }
+
+      .extension-card {
+        padding: 2rem;
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+      }
+
+      .extension-card h4 {
+        margin-bottom: 1.5rem;
+        font-size: 1.25rem;
+      }
+
+      .field-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.875rem;
+      }
+
+      .field-table th {
+        background: #f1f5f9;
+        padding: 0.75rem;
+        text-align: left;
+        font-weight: 600;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      .field-table td {
+        padding: 0.75rem;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .field-table code {
+        background: #f1f5f9;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+      }
+
+      .compatibility-note {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: #dcfce7;
+        border-left: 4px solid #16a34a;
+        border-radius: 8px;
+        color: #166534;
+      }
+
+      /* Tech Stack Detailed */
+      .tech-stack-detailed {
+        padding: 4rem 0;
+        background: #f8fafc;
+        margin: 2rem -2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .tech-stack-detailed h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .stack-layers {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .stack-layer {
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        border-left: 4px solid #667eea;
+      }
+
+      .highlight-layer {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      .highlight-layer h4 {
+        color: white;
+      }
+
+      .stack-layer h4 {
+        margin-bottom: 1rem;
+        font-size: 1.125rem;
+      }
+
+      .stack-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .stack-item {
+        padding: 0.5rem 1rem;
+        background: #f1f5f9;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #334155;
+      }
+
+      .highlight-layer .stack-item {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+
+      /* Security Section */
+      .security-section {
+        padding: 4rem 0;
+      }
+
+      .security-section h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .security-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .security-card {
+        padding: 2rem;
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .security-card:hover {
+        border-color: #16a34a;
+        transform: translateY(-4px);
+      }
+
+      .security-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .security-card h4 {
+        margin-bottom: 0.75rem;
+        font-size: 1.125rem;
+      }
+
+      .security-card p {
+        color: #64748b;
+        line-height: 1.6;
+        font-size: 0.875rem;
+      }
+
+      /* CTA */
+      .arch-cta {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 16px;
+        margin: 2rem 0;
+      }
+
+      .arch-cta h3 {
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .arch-cta p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .button-primary {
+        background: white;
+        color: #667eea;
+      }
+
+      .button-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .page-hero h1 {
+          font-size: 2rem;
+        }
+
+        .components-grid,
+        .extension-grid,
+        .security-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .flow-step {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </body>
+</html>

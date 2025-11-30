@@ -1,0 +1,290 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<Layout
+  title="Wallet MCP para BSV"
+  description="La primera wallet autocustodiada en el mundo que puede ser controlada completamente desde un agente LLM mediante el protocolo MCP"
+  lang="es"
+>
+  <Navbar selectedItem="wallet-mcp" />
+  <div class="page-wrapper">
+    <main class="main-content" id="main-content">
+      <div class="container">
+        <section class="page-hero">
+          <Breadcrumb
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "Wallet MCP" }
+            ]}
+          />
+          <span class="hero-badge"><span role="img" aria-label="Trophy representing world-first achievement">🏆</span> WORLD FIRST</span>
+          <h1><span lang="en">Wallet MCP</span> para <span lang="en">BSV</span></h1>
+          <p class="lead">
+            La primera wallet autocustodiada en el mundo que puede ser controlada completamente desde un agente <span lang="en">LLM</span> mediante el protocolo <span lang="en">MCP</span>.
+          </p>
+        </section>
+
+        <section class="intro-section">
+          <div class="intro-card highlight-intro">
+            <h2>¿Qué es <span lang="en">MCP</span>?</h2>
+            <p><strong lang="en">Model Context Protocol (MCP)</strong> es un protocolo abierto creado por <span lang="en">Anthropic</span>
+               que permite a los <span lang="en">LLMs</span> interactuar con herramientas externas de forma segura y estandarizada.</p>
+            <p>Piensa en él como un <span lang="en">"USB"</span> universal para conectar <span lang="en">IAs</span> con sistemas externos.</p>
+          </div>
+
+          <div class="intro-card">
+            <h2>¿Qué hace nuestra <span lang="en">Wallet</span>?</h2>
+            <p>Es un servidor <span lang="en">MCP</span> que expone una wallet <span lang="en">BSV</span> completamente funcional, permitiendo que
+               cualquier cliente <span lang="en">LLM</span> compatible (<span lang="en">Claude Desktop</span>, <span lang="en">Cursor</span>, etc.) pueda:</p>
+            <ul role="list">
+              <li>Generar wallets nuevas</li>
+              <li>Ver balances</li>
+              <li>Enviar pagos</li>
+              <li>Listar transacciones</li>
+              <li>Todo mediante lenguaje natural</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="features-section">
+          <h2>Características Principales</h2>
+
+          <div class="feature-item">
+            <h3><span role="img" aria-label="Lock representing security">🔐</span> Autocustodia Total</h3>
+            <p>Tus claves privadas nunca salen de tu dispositivo. Control total sobre tus fondos.</p>
+          </div>
+
+          <div class="feature-item">
+            <h3><span role="img" aria-label="Robot representing AI control">🤖</span> Control por <span lang="en">IA</span></h3>
+            <p>Interactúa con tu wallet usando lenguaje natural a través de <span lang="en">Claude</span> u otros <span lang="en">LLMs</span>.</p>
+          </div>
+
+          <div class="feature-item">
+            <h3><span role="img" aria-label="Accessibility symbol">♿</span> Completamente Accesible</h3>
+            <p>Todas las operaciones incluyen metadatos de accesibilidad para usuarios con necesidades especiales.</p>
+          </div>
+
+          <div class="feature-item">
+            <h3><span role="img" aria-label="Lightning bolt representing speed">⚡</span> Basada en <span lang="en">BSV</span></h3>
+            <p>Aprovecha la escalabilidad y bajas comisiones de <span lang="en">Bitcoin SV</span>.</p>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <h2>Comienza a Usar la <span lang="en">Wallet MCP</span></h2>
+          <p>Integra pagos <span lang="en">BSV</span> en tu aplicación mediante lenguaje natural.</p>
+          <a href="/implementacion" class="button button-primary">Ver Guía de Implementación</a>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    .page-wrapper {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .page-hero {
+      padding: 2rem 0 3rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      color: white;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      color: #cbd5e1; /* AAA Compliant */
+      line-height: 1.7;
+      max-width: 75ch;
+    }
+
+    .intro-section {
+      padding: 3rem 0;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .intro-card {
+      padding: 2rem;
+      background: #1c1c1c;
+      border: 2px solid #353535;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .intro-card:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+    }
+
+    .intro-card:focus-within {
+      outline: 2px solid #fbbf24;
+      outline-offset: 2px;
+    }
+
+    .highlight-intro {
+      background: linear-gradient(135deg, #2d1b69 0%, #1e1348 100%);
+      border-color: #a78bfa;
+    }
+
+    .intro-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      letter-spacing: 0;
+    }
+
+    .intro-card p {
+      color: #cbd5e1; /* AAA Compliant */
+      line-height: 1.7;
+      max-width: 75ch;
+    }
+
+    .intro-card ul {
+      margin-top: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .intro-card li {
+      color: #cbd5e1; /* AAA Compliant */
+      line-height: 1.8;
+    }
+
+    .features-section {
+      padding: 4rem 0;
+    }
+
+    .features-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      letter-spacing: 0;
+    }
+
+    .feature-item {
+      padding: 1.5rem;
+      background: #1c1c1c;
+      border: 2px solid #353535;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+    }
+
+    .feature-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      letter-spacing: 0;
+    }
+
+    .feature-item p {
+      color: #cbd5e1; /* AAA Compliant */
+      line-height: 1.7;
+      max-width: 75ch;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 16px;
+      margin: 2rem 0;
+    }
+
+    .cta-section h2 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0;
+    }
+
+    .cta-section p {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      min-height: 44px; /* AAA Compliant */
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .button-primary {
+      background: white;
+      color: #667eea;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .button-primary:focus,
+    .button-primary:focus-visible {
+      outline: 2px solid #fbbf24;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .intro-card:hover,
+      .feature-item:hover,
+      .button-primary:hover {
+        transform: none;
+      }
+    }
+  </style>
+</Layout>

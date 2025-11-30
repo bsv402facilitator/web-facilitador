@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<Layout
+  title="Arquitectura Técnica"
+  description="Diseño de sistema escalable, seguro y accesible que conecta protocolos modernos con blockchain"
+  lang="es"
+>
+  <Navbar selectedItem="arquitectura" />
+  <div class="page-wrapper">
+    <main class="main-content" id="main-content">
+      <div class="container">
+        <section class="page-hero">
+          <Breadcrumb
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "Arquitectura Técnica" }
+            ]}
+          />
+          <h1>Arquitectura Técnica del Facilitador</h1>
+          <p class="lead">
+            Diseño de sistema escalable, seguro y accesible que conecta protocolos modernos con blockchain.
+          </p>
+        </section>
+
+        <section class="arch-cta">
+          <h2>Documentación en Desarrollo</h2>
+          <p>La documentación técnica completa estará disponible próximamente.</p>
+          <a href="/implementacion" class="button button-primary">Ver Guía de Implementación</a>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    .page-wrapper {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .page-hero {
+      padding: 2rem 0 3rem;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      color: #cbd5e1; /* AAA Compliant */
+      line-height: 1.7;
+      max-width: 75ch;
+    }
+
+    .arch-cta {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 16px;
+      margin: 2rem 0;
+    }
+
+    .arch-cta h2 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .arch-cta p {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      min-height: 44px; /* AAA Compliant */
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .button-primary {
+      background: white;
+      color: #667eea;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .button-primary:focus,
+    .button-primary:focus-visible {
+      outline: 2px solid #fbbf24;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .button-primary:hover {
+        transform: none;
+      }
+    }
+  </style>
+</Layout>
