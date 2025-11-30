@@ -36,7 +36,7 @@ import Breadcrumb from "../components/Breadcrumb.astro";
             <div class="code-box">
               <pre><code>curl -X POST https://facilitador.bsv.com/api/register
   -H "Content-Type: application/json"
-  -d '{"email": "tu@email.com"}'</code></pre>
+  -d '{"{"}&#34;email&#34;: &#34;tu@email.com&#34;{"}"}'</code></pre>
             </div>
           </div>
 
@@ -47,14 +47,14 @@ import Breadcrumb from "../components/Breadcrumb.astro";
               <pre><code>curl -X POST https://facilitador.bsv.com/api/payment
   -H "Authorization: Bearer TU_API_KEY"
   -H "Content-Type: application/json"
-  -d '{
-    "amount": "0.001",
-    "currency": "BSV",
-    "to_address": "1A1zP1...",
-    "accessibility_profile": {
-      "needs": ["vision", "simple"]
-    }
-  }'</code></pre>
+  -d '{"{"}
+    &#34;amount&#34;: &#34;0.001&#34;,
+    &#34;currency&#34;: &#34;BSV&#34;,
+    &#34;to_address&#34;: &#34;1A1zP1...&#34;,
+    &#34;accessibility_profile&#34;: {"{"}
+      &#34;needs&#34;: [&#34;vision&#34;, &#34;simple&#34;]
+    {"}"}
+  {"}"}'</code></pre>
             </div>
           </div>
 
@@ -62,15 +62,15 @@ import Breadcrumb from "../components/Breadcrumb.astro";
             <h3>3. Procesa la Respuesta</h3>
             <p>Todas las respuestas incluyen metadatos de accesibilidad</p>
             <div class="code-box">
-              <pre><code>{
-  "status": "success",
-  "txid": "a1b2c3d4...",
-  "accessibility": {
-    "summary": "Pago enviado correctamente",
-    "tags": ["vision", "simple"],
-    "simple_explanation": "El dinero llegó bien"
-  }
-}</code></pre>
+              <pre><code>{"{"}
+  &#34;status&#34;: &#34;success&#34;,
+  &#34;txid&#34;: &#34;a1b2c3d4...&#34;,
+  &#34;accessibility&#34;: {"{"}
+    &#34;summary&#34;: &#34;Pago enviado correctamente&#34;,
+    &#34;tags&#34;: [&#34;vision&#34;, &#34;simple&#34;],
+    &#34;simple_explanation&#34;: &#34;El dinero llegó bien&#34;
+  {"}"}
+{"}"}</code></pre>
             </div>
           </div>
         </section>
