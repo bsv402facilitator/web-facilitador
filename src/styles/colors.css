@@ -13,7 +13,7 @@
   /* Color de Acento - Simplificado */
   --accent-primary: #3b82f6;     /* Azul principal */
   --accent-hover: #2563eb;       /* Azul hover */
-  --accent-light: #60a5fa;       /* Azul claro */
+  --accent-light: #93c5fd;       /* Azul claro - 7.8:1 contrast AAA compliant */
 
   /* Bordes */
   --border-subtle: #333333;      /* Bordes sutiles */
